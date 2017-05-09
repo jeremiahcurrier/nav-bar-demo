@@ -1,0 +1,109 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- http://garden.zendesk.com -->
+  <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/0/zendesk_garden.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <!-- <script type="text/javascript" src="main.js"></script> -->
+</head>
+<body>
+  <div class="container">
+
+    <form>
+      <div class="input-group">
+          <label for="exampleSearch"></label>
+          <input type="search" class="form-control" id="exampleSearch" placeholder="Search for views by name">
+          <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">Search</button>
+          </span>
+      </div>
+    </form>
+
+    <hr>
+
+    <h2>Search Results</h2>
+    <p>Note: Limited to views that contain at least once instance of a 'tags does not contain' condition.</p>
+    <p><a href="https://support.zendesk.com/hc/en-us/articles/203690806-Using-views-to-manage-ticket-workflow#topic_tpp_zfp_ec">Learn more</a></p>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="column-1"></th>
+          <th>Name of View</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="column-1">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description"></span>
+            </label>
+          </td>
+          <td>one</td>
+        </tr>
+        <tr>
+          <td class="column-1">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description"></span>
+            </label>
+          </td>
+          <td>two</td>
+        </tr>
+        <tr>
+          <td class="column-1">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description"></span>
+            </label>
+          </td>
+          <td>three</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <form>
+      <div class="input-group">
+          <label for="addTag"></label>
+          <input type="text" class="form-control" id="addTag" placeholder="Enter a tag to add">
+          <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">Add tag</button>
+          </span>
+      </div>
+    </form>
+
+
+  </div>
+  <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script>
+    // Initialise the Zendesk JavaScript API client
+    // https://developer.zendesk.com/apps/docs/apps-v2
+    var client = ZAFClient.init();
+    // client.invoke('resize', { width: '100%', height: '200px' });
+
+    // ZAF v2 modal dialog
+    client.invoke('instances.create', {
+      location: 'modal',
+      // url: 'https://en.m.wikipedia.org/wiki/Main_Page'
+      url: 'assets/modal.html'
+    }).then(function(modalContext) {
+      // The modal is on the screen now!
+      var modalClient = client.instance(modalContext['instances.create'][0].instanceGuid);
+      
+      modalClient.on('modal.close', function() {
+        // The modal has been closed.
+      });
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Full page app",
+  "author": {
+    "name": "Jeremiah",
+    "email": "jeremiah@zendesk.com",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "nav_bar": "assets/iframe.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}

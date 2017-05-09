@@ -1,0 +1,26 @@
+h1, h2, p {
+  text-align: center;
+}
+
+p a {
+  color: #30aabc;
+}
+
+.container {
+  width: 80%;
+  margin-top: 20px;
+}
+
+.input-group {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.column-1 {
+  width: 5%;
+}
+
+.modal-bold {
+  font-size: 16px;
+  font-weight: bold;
+}

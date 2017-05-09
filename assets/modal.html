@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal dialog</title>
+  <!-- http://garden.zendesk.com -->
+  <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/0/zendesk_garden.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+
+<h2>Are you sure?</h2>
+
+  <p>The<br><span class="modal-bold">"tags does not contain"</span><br>condition will have the tag<br><span class="modal-bold">new_tag_here</span><br>added to it for each of these views</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name of View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>two</td>
+      </tr>
+      <tr>
+        <td>three</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form>
+    <div class="input-group" style="margin-left:0; width: 100%;">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" style="width:100%; margin-left:0">Confirm</button>
+        </span>
+    </div>
+  </form>
+
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script type="text/javascript">
+    var client = ZAFClient.init();
+    client.invoke("resize", {width: "60vh", height: "50vh"});
+  </script>
+</body>
+</html>
